@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  startWaitTime: 3
+  startWaitTime: 2
   moveSpots:
   - {fileID: 2104124691}
   - {fileID: 1552121272}
