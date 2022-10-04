@@ -54,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
         // Moves the character
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
         
     }
 

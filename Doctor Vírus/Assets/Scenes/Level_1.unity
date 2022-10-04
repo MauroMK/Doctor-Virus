@@ -221,7 +221,7 @@ Transform:
   - {fileID: 1112571151}
   - {fileID: 264302939}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479701998
 GameObject:
@@ -504,7 +504,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &586430234
 MonoBehaviour:
@@ -730,7 +730,7 @@ Transform:
   - {fileID: 701825235}
   - {fileID: 1215920860}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701825234
 GameObject:
@@ -42465,6 +42465,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1226217560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1226217561}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1226217561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226217560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.115, y: -0.007, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1364937021}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1364937018
 GameObject:
   m_ObjectHideFlags: 0
@@ -42476,10 +42507,11 @@ GameObject:
   - component: {fileID: 1364937021}
   - component: {fileID: 1364937020}
   - component: {fileID: 1364937019}
-  - component: {fileID: 1364937022}
   - component: {fileID: 1364937023}
+  - component: {fileID: 1364937022}
+  - component: {fileID: 1364937024}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Doctor V
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42498,7 +42530,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0006390214, y: -0.0006390251}
+  m_Offset: {x: -0.0006389618, y: -0.0006390214}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -42509,7 +42541,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.105941415, y: 0.15616584}
+  m_Size: {x: 0.08858752, y: 0.15616584}
   m_EdgeRadius: 0
 --- !u!212 &1364937020
 SpriteRenderer:
@@ -42574,9 +42606,10 @@ Transform:
   m_LocalPosition: {x: -1.536, y: 0.045, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1226217561}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1364937022
 MonoBehaviour:
@@ -42613,6 +42646,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1364937024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364937018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ef4ab6a1a83c142bfc6b98914a678f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1226217561}
+  syringuePrefab: {fileID: 4509082496683672806, guid: 7c68ebe66f3cb3842b7fe8477b13c9bf, type: 3}
 --- !u!1 &1552121271
 GameObject:
   m_ObjectHideFlags: 0
