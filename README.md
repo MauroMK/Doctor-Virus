@@ -1,2 +1,2 @@
 # Doctor-Virus
-Square Pix Game Jam - Card game where the doctor needs to fight against the viruses in the hospital to reach the pacient and perform the surgery.
+Square Pix Game Jam - Top down shooter 2D game where the doctor needs to fight against the viruses in the hospital to rescue his daughter.
