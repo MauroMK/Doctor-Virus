@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-
-    private Rigidbody2D rb;
     
     Vector2 movement;
+    Vector2 mousePos;
 
+    public float moveSpeed;
+    public Camera cam;
+
+    private Rigidbody2D rb;
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 6f;
+    private float dashingPower = 8f;
     private float dashingTime = 0.1f;
-    
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +26,13 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     void FixedUpdate()
@@ -45,10 +54,7 @@ public class PlayerMovement : MonoBehaviour
         // Moves the character
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)
-        {
-            StartCoroutine(Dash());
-        }
+        
     }
 
     private IEnumerator Dash()
@@ -60,9 +66,9 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
     }
     
-    public void OnCollisionEnter2D(Collision2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" && !isDashing)
         {
             Destroy(gameObject);
             // ShowGameOverScreen()
