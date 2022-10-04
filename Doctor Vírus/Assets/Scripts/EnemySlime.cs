@@ -21,6 +21,7 @@ public class EnemySlime : MonoBehaviour
 
     void Update()
     {
+        // Makes the enemy move in random positions between some moveSpots setted
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)

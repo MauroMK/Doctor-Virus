@@ -37,4 +37,14 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
     }
+
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            // ShowGameOverScreen()
+            // Set time to pause
+        }
+    }
 }
