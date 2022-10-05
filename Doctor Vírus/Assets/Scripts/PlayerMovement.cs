@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
     Vector2 movement;
-    Vector2 mousePos;
 
     public float moveSpeed;
-    public Camera cam;
-
     private Rigidbody2D rb;
+    private bool facingRight = true;
+
+    #region Dash Variables
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 8f;
+    private float dashingPower = 4f;
     private float dashingTime = 0.1f;
+    #endregion
 
     void Awake()
     {
@@ -24,11 +24,34 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        HandleInput();
+        HandleDash();
+    }
+
+    private void HandleInput()
+    {
+        // Reads the input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        // Verifies if the player is in the right position
+        Vector2 direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
 
+        if (direction.x > 0 && !facingRight || direction.x < 0 && facingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        // Turns the player
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void HandleDash()
+    {
         if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)
         {
             StartCoroutine(Dash());
@@ -41,23 +64,9 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        // Swap sprite direction, wether you're going right or left
-        if(movement.x > 0)
-        {
-            transform.localScale = Vector2.one;
-        }
-        if(movement.x < 0)
-        {
-            transform.localScale = new Vector2(-1, 1);
-        }
 
         // Moves the character
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        
     }
 
     private IEnumerator Dash()
