@@ -6,18 +6,36 @@ using UnityEngine.Events;
 public class InteractWithButton : MonoBehaviour
 {
     [SerializeField]
-    private PlayerMovement playerMovement;
+    private PlayerMovement player;
+
+    [SerializeField]
+    private bool needCheckInventory;
+
+    [SerializeField]
+    private string itemName;
+
     [SerializeField]
     private UnityEvent pressedButton;
+    
     private bool canInteract;
 
     void Update()
     {
         if (canInteract)
         {
-            if (playerMovement.isInteracting == true)
+            if (canInteract && player.isInteracting == true)
             {
-                pressedButton.Invoke();
+                if (needCheckInventory)
+                {
+                    if (player.HaveItem(itemName))
+                    {
+                        pressedButton.Invoke();
+                    }
+                }
+                else
+                {
+                    pressedButton.Invoke();
+                }
             }
         }
     }

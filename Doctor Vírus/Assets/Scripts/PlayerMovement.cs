@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isInteracting;
 
+    [SerializeField]
     private List<string> inventoryItems = new List<string>();
 
     void Awake()
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         inventoryItems.Add(itemName);
     }
 
-    public bool haveItem(string itemName)
+    public bool HaveItem(string itemName)
     {
         // If the item name is in the inventory -> TRUE
         // If not -> FALSE
