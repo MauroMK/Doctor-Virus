@@ -13,6 +13,10 @@ public class EnemySlime : MonoBehaviour
 
     private int randomSpot;
 
+    [SerializeField]
+    private GameObject itemPrefab;
+    private Transform dropLocation;
+
     void Start()
     {
         waitTime = startWaitTime;
@@ -42,7 +46,19 @@ public class EnemySlime : MonoBehaviour
     {
         if (other.gameObject.tag == "Syringue")
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        DropItem();
+    }
+
+    private void DropItem()
+    {
+        Vector2 position = transform.position;
+        GameObject item = Instantiate(itemPrefab, position, transform.rotation);
     }
 }
