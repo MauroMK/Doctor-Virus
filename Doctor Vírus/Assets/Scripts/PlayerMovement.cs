@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         HandleInput();
         HandleDash();
         HandleInteract();
+        HandlePauseMenu();
     }
 
     void FixedUpdate()
@@ -85,6 +86,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void HandlePauseMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.instance.ShowPauseMenu();
+        }
+    }
+
     private void Flip()
     {
         // Turns the player
@@ -115,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
         {
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);
+            Time.timeScale = 0;
         }
     }
 }

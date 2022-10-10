@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 498048976}
   - component: {fileID: 498048978}
   - component: {fileID: 498048977}
+  - component: {fileID: 498048979}
   m_Layer: 5
   m_Name: StartText
   m_TagString: Untagged
@@ -158,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12.406}
-  m_SizeDelta: {x: 0, y: 24.8121}
+  m_AnchoredPosition: {x: 0, y: -22.0937}
+  m_SizeDelta: {x: 0, y: 44.1876}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &498048977
 MonoBehaviour:
@@ -183,7 +184,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 725b8728e8cab3f4b8d5999c5c7309f0, type: 3}
-    m_FontSize: 17
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -203,6 +204,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498048975}
   m_CullTransparentMesh: 1
+--- !u!114 &498048979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498048975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,8 +483,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: -35.5685}
+  m_SizeDelta: {x: 0, y: 71.1369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630032023
 MonoBehaviour:
@@ -492,11 +508,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 39
+    m_FontSize: 59
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 49
+    m_MaxSize: 65
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -617,8 +633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 150, y: 30}
+  m_AnchoredPosition: {x: 0.0000038147, y: 33}
+  m_SizeDelta: {x: 211.87, y: 52.6151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &757274301
 MonoBehaviour:
@@ -750,8 +766,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -59}
-  m_SizeDelta: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: -66.92633}
+  m_SizeDelta: {x: 0, y: 65.8527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767253077
 MonoBehaviour:
@@ -995,6 +1011,7 @@ GameObject:
   - component: {fileID: 2004871978}
   - component: {fileID: 2004871980}
   - component: {fileID: 2004871979}
+  - component: {fileID: 2004871981}
   m_Layer: 5
   m_Name: QuitText
   m_TagString: Untagged
@@ -1044,7 +1061,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 725b8728e8cab3f4b8d5999c5c7309f0, type: 3}
-    m_FontSize: 17
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1064,6 +1081,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004871977}
   m_CullTransparentMesh: 1
+--- !u!114 &2004871981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004871977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2144267793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,8 +1133,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000023842, y: -83}
-  m_SizeDelta: {x: 120, y: 30}
+  m_AnchoredPosition: {x: 0.0019531, y: -70}
+  m_SizeDelta: {x: 211.8739, y: 52.615}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2144267795
 MonoBehaviour:
