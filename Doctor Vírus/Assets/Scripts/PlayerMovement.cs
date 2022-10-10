@@ -113,9 +113,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" && !isDashing)
         {
+            GameManager.instance.ShowGameOver();
             Destroy(gameObject);
-            // ShowGameOverScreen()
-            // Set time to pause
         }
     }
 }
