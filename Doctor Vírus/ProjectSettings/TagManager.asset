@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Syringue
+  - Portal
   layers:
   - Default
   - TransparentFX
