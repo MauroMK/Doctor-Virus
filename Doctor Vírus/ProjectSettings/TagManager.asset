@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Syringue
   - Portal
+  - Fungus
+  - Slime
   layers:
   - Default
   - TransparentFX

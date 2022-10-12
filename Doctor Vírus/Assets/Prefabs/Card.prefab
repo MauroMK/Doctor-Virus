@@ -116,3 +116,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Card
   sound: {fileID: 8300000, guid: 7d2455bf5a77be7448c4754bb46f5bcc, type: 3}
+  itemImage: {fileID: 0}

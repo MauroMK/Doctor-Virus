@@ -6,7 +6,7 @@ public class WeaponScript : MonoBehaviour
 {
     public Transform barrel;
     public GameObject syringuePrefab;
-    public bool shootSyringue = true;
+    public bool shootSyringue = false;
     
     void Update()
     {

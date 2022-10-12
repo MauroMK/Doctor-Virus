@@ -9,13 +9,14 @@ public class EnemySlime : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
 
+    public string weakness;
+
     public Transform[] moveSpots;
 
     private int randomSpot;
 
     [SerializeField]
     private GameObject itemDrop;
-    private Transform dropLocation;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class EnemySlime : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Syringue")
+        if (other.gameObject.tag == weakness)
         {
             Die();
         }

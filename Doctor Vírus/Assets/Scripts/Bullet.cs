@@ -13,7 +13,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.layer == 6)
+        if (other.gameObject.tag == "Slime" || other.gameObject.layer == 6)
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.tag == "Fungus" || other.gameObject.layer == 6)
         {
             Destroy(gameObject);
         }

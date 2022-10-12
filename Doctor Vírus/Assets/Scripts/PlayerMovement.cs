@@ -120,7 +120,14 @@ public class PlayerMovement : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy" && !isDashing)
+        if (other.gameObject.tag == "Slime" && !isDashing)
+        {
+            GameManager.instance.ShowGameOver();
+            Destroy(gameObject);
+            Time.timeScale = 0;
+        }
+
+        if (other.gameObject.tag == "Fungus" && !isDashing)
         {
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);
