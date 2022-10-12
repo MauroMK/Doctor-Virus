@@ -8,24 +8,32 @@ public class EnemyFollow : MonoBehaviour
     public float speed;
     public float startFollowDistance = 1;
 
+    public bool isFollowing = false;
+
     public string weakness;
 
-    private Transform target;
+    private Transform player;
 
     [SerializeField]
     private GameObject itemDrop;
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) < startFollowDistance)
+
+        if (Vector2.Distance(transform.position, player.position) < startFollowDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            isFollowing = true;
         }
+
+        if (isFollowing == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }   
     }
 
     private void OnTriggerEnter2D(Collider2D other)

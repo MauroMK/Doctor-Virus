@@ -503,7 +503,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -511,6 +511,27 @@ TextureImporter:
       bones: []
       spriteID: 141ad078fb42d44418679ce5b2665f43
       internalID: 820181348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ranged_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a9f59de73c1414996cdd010576403a
+      internalID: 1883637801
       vertices: []
       indices: 
       edges: []
@@ -529,6 +550,7 @@ TextureImporter:
       wall_0: 182704190
       wall_2: 1313063467
       wall_6: 216054489
+      ranged_0: 1883637801
       fungus_0: 820181348
       wall_1: -1581325875
       wall_3: -975370176

@@ -133,5 +133,12 @@ public class PlayerMovement : MonoBehaviour
             Destroy(gameObject);
             Time.timeScale = 0;
         }
+
+        if (other.gameObject.tag == "Projectile" && !isDashing)
+        {
+            GameManager.instance.ShowGameOver();
+            Destroy(gameObject);
+            Time.timeScale = 0;
+        }
     }
 }

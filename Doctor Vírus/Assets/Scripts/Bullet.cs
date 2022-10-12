@@ -22,5 +22,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (other.gameObject.tag == "Bacterium" || other.gameObject.layer == 6)
+        {
+            Destroy(gameObject);
+        }
     }
 }

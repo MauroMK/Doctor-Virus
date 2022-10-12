@@ -9,6 +9,8 @@ TagManager:
   - Portal
   - Fungus
   - Slime
+  - Projectile
+  - Bacterium
   layers:
   - Default
   - TransparentFX
