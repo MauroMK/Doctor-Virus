@@ -14,7 +14,7 @@ public class EnemySlime : MonoBehaviour
     private int randomSpot;
 
     [SerializeField]
-    private GameObject itemPrefab;
+    private GameObject itemDrop;
     private Transform dropLocation;
 
     void Start()
@@ -59,6 +59,6 @@ public class EnemySlime : MonoBehaviour
     private void DropItem()
     {
         Vector2 position = transform.position;
-        GameObject item = Instantiate(itemPrefab, position, transform.rotation);
+        GameObject item = Instantiate(itemDrop, position, transform.rotation);
     }
 }
