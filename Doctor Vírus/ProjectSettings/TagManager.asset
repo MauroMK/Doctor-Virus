@@ -19,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
-  - 
+  - FogOfWarMain
+  - FogOfWarSecondary
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Secondary
+    uniqueID: 478081839
     locked: 0

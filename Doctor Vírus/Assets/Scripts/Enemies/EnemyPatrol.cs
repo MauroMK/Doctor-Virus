@@ -24,7 +24,7 @@ public class EnemyPatrol : MonoBehaviour
         randomSpot = Random.Range(0, moveSpots.Length);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Makes the enemy move in random positions between some moveSpots setted
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);

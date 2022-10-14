@@ -28,7 +28,7 @@ public class EnemyCait : MonoBehaviour
         timeBtwShots = startTimeBtwShots;
     }
 
-    void Update()
+    void FixedUpdate()
     {
             if (Vector2.Distance(transform.position, player.position) < startFollowDistance)
             {

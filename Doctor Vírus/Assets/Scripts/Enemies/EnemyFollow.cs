@@ -22,7 +22,7 @@ public class EnemyFollow : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (Vector2.Distance(transform.position, player.position) < startFollowDistance)
