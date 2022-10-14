@@ -5,6 +5,10 @@ using UnityEngine.Events;
 
 public class InteractWithButton : MonoBehaviour
 {
+
+    [SerializeField]
+    private GameObject hintText;
+
     [SerializeField]
     private PlayerMovement player;
 
@@ -43,10 +47,16 @@ public class InteractWithButton : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         canInteract = true;
+        if (other.gameObject.tag == "Player")
+        {
+            hintText.SetActive(true);
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         canInteract = false;
+        hintText.SetActive(false);
     }
 }
