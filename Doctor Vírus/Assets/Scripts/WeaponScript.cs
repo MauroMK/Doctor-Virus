@@ -6,7 +6,8 @@ public class WeaponScript : MonoBehaviour
 {
     public Transform barrel;
     public GameObject syringuePrefab;
-    public bool shootSyringue = false;
+    public bool canShootSyringue = false;
+    private SpriteRenderer SyringueSprite;
     
     void Update()
     {
@@ -15,23 +16,34 @@ public class WeaponScript : MonoBehaviour
 
     public void HandleShooting()
     {
-        if(Input.GetButtonDown("Fire1") && shootSyringue == true)
+        if(Input.GetButtonDown("Fire1") && canShootSyringue == true)
         {
             Shoot();
         }
+
+        if (canShootSyringue == false)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        if (canShootSyringue == true)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        
     }
 
     public void Shoot()
     {
         Instantiate(syringuePrefab, barrel.position, barrel.rotation);
-        shootSyringue = false;
+        canShootSyringue = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Syringue" && shootSyringue == false)
+        if (other.gameObject.tag == "Syringue" && canShootSyringue == false)
         {
-            shootSyringue = true;
+            canShootSyringue = true;
             Destroy(other.gameObject);
         }
     }
