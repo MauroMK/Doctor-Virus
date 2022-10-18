@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponScript : MonoBehaviour
+public class SyringueScript : MonoBehaviour
 {
     public Transform barrel;
     public GameObject syringuePrefab;
-    public bool canShootSyringue = false;
     private SpriteRenderer SyringueSprite;
+
+    public bool canShootSyringue;
     
     void Update()
     {
@@ -20,17 +21,6 @@ public class WeaponScript : MonoBehaviour
         {
             Shoot();
         }
-
-        if (canShootSyringue == false)
-        {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        }
-
-        if (canShootSyringue == true)
-        {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        }
-        
     }
 
     public void Shoot()
