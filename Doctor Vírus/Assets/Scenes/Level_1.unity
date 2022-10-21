@@ -168,8 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80ffed66558c0240ac727db8da54fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1364937022}
-  weaponCollider: {fileID: 1298671915}
 --- !u!212 &29598671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68906,6 +68904,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 745465467579308963, guid: 677639e457c715146943984bbbe305c8, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8424206
+      objectReference: {fileID: 0}
+    - target: {fileID: 745465467579308963, guid: 677639e457c715146943984bbbe305c8, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.34121025
+      objectReference: {fileID: 0}
     - target: {fileID: 745465467579308964, guid: 677639e457c715146943984bbbe305c8, type: 3}
       propertyPath: m_Name
       value: Fungus2
@@ -83255,6 +83261,8 @@ MonoBehaviour:
   selectedWeapon: 0
   canShootSyringue: 0
   canUseAntibiotic: 0
+  isImune: 0
+  player: {fileID: 1364937022}
 --- !u!61 &1298671915
 BoxCollider2D:
   m_ObjectHideFlags: 0

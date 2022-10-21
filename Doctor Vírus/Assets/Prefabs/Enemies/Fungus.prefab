@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 745465467579308961}
   - component: {fileID: 745465467579308960}
-  - component: {fileID: 745465467579308963}
   - component: {fileID: 745465467579308962}
   - component: {fileID: 745465467579308965}
+  - component: {fileID: 9184916183467297921}
   m_Layer: 0
   m_Name: Fungus
   m_TagString: Fungus
@@ -87,32 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &745465467579308963
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745465467579308964}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.57, y: 0.87}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
 --- !u!50 &745465467579308962
 Rigidbody2D:
   serializedVersion: 4
@@ -151,3 +125,19 @@ MonoBehaviour:
   isFollowing: 0
   weakness: Syringue
   itemDrop: {fileID: 6761864455136123763, guid: 18400f6771ccb0b43858a5e8aa7c4757, type: 3}
+--- !u!58 &9184916183467297921
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745465467579308964}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009563006, y: -0.016299376}
+  serializedVersion: 2
+  m_Radius: 0.56191045

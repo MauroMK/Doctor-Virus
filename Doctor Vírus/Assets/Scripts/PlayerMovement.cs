@@ -97,13 +97,6 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if (other.gameObject.tag == "Fungus")
-        {
-            GameManager.instance.ShowGameOver();
-            Destroy(gameObject);
-            Time.timeScale = 0;
-        }
-
         if (other.gameObject.tag == "Projectile")
         {
             GameManager.instance.ShowGameOver();

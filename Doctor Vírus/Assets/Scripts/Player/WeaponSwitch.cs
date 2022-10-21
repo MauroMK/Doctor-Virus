@@ -9,12 +9,26 @@ public class WeaponSwitch : MonoBehaviour
     public bool canUseAntibiotic;
     public bool isImune;
     
+    #region Antibiotic
+    
+    public PlayerMovement player;
+    private float buffTime = 2f;
+    private float buffSpeed = 1.5f;
+    private float normalPlayerSpeed = 0.8f;
+
+    #endregion
+
     void Start()
     {
         SelectWeapon();
     }
 
     void Update()
+    {
+        HandleMouseWheel();
+    }
+
+    void HandleMouseWheel()
     {
         int previousSelectedWeapon = selectedWeapon;
 
@@ -83,5 +97,28 @@ public class WeaponSwitch : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.tag == "Fungus" && !isImune)
+        {
+            GameManager.instance.ShowGameOver();
+            Destroy(gameObject);
+            Time.timeScale = 0;
+        }
     }
+
+    public void HandleCoroutine()
+    {
+        StartCoroutine(UseAntibiotic());
+    }
+
+    private IEnumerator UseAntibiotic()
+    {
+        isImune = true;
+        canUseAntibiotic = false;
+        player.moveSpeed = buffSpeed;
+        yield return new WaitForSeconds(buffTime);
+        isImune = false;
+        player.moveSpeed = normalPlayerSpeed;
+    }
+
 }

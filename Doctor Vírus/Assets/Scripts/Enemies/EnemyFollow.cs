@@ -8,7 +8,6 @@ public class EnemyFollow : MonoBehaviour
     public float speed;
     public float startFollowDistance = 1;
     public bool isFollowing = false;
-    public string weakness;
 
     private Transform player;
     private WeaponSwitch antibiotic;
@@ -24,12 +23,12 @@ public class EnemyFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        // If the player and the enemy reach a certain distance, the enemy starts following
         if (Vector2.Distance(transform.position, player.position) < startFollowDistance)
         {
             isFollowing = true;
         }
-
+        // If is following true, move the enemy to the player
         if (isFollowing == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
