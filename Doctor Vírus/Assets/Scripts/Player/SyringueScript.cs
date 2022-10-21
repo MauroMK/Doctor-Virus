@@ -8,8 +8,13 @@ public class SyringueScript : MonoBehaviour
     public GameObject syringuePrefab;
     private SpriteRenderer SyringueSprite;
 
-    public bool canShootSyringue;
+    public WeaponSwitch syringue;
     
+    void Start()
+    {
+        syringue = FindObjectOfType<WeaponSwitch>();
+    }
+
     void Update()
     {
         HandleShooting();
@@ -17,7 +22,7 @@ public class SyringueScript : MonoBehaviour
 
     public void HandleShooting()
     {
-        if(Input.GetButtonDown("Fire1") && canShootSyringue == true)
+        if(Input.GetButtonDown("Fire1") && syringue.canShootSyringue == true)
         {
             Shoot();
         }
@@ -26,16 +31,9 @@ public class SyringueScript : MonoBehaviour
     public void Shoot()
     {
         Instantiate(syringuePrefab, barrel.position, barrel.rotation);
-        canShootSyringue = false;
+        syringue.canShootSyringue = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Syringue" && canShootSyringue == false)
-        {
-            canShootSyringue = true;
-            Destroy(other.gameObject);
-        }
-    }
+    
 
 }

@@ -6,6 +6,8 @@ public class WeaponSwitch : MonoBehaviour
 {
     public int selectedWeapon = 0;
 
+    public bool canShootSyringue;
+
     void Start()
     {
         SelectWeapon();
@@ -59,6 +61,15 @@ public class WeaponSwitch : MonoBehaviour
                 weapon.gameObject.SetActive(false);
             }
             i++;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Syringue" && canShootSyringue == false)
+        {
+            canShootSyringue = true;
+            Destroy(other.gameObject);
         }
     }
 }
