@@ -11,6 +11,7 @@ TagManager:
   - Slime
   - Projectile
   - Bacterium
+  - Antibiotic
   layers:
   - Default
   - TransparentFX

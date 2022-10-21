@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fungus
+      name: Bacterium
       rect:
         serializedVersion: 2
         x: 25
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bacterium
+      name: Fungus
       rect:
         serializedVersion: 2
         x: 195
@@ -169,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bacterium: 81444490
-      Fungus: 90042922
+      Bacterium: 90042922
+      Fungus: 81444490
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

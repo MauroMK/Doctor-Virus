@@ -11,13 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
     #endregion
 
-    #region Dash Variables
-    private bool canDash = true;
-    private bool isDashing;
-    private float dashingPower = 4f;
-    private float dashingTime = 0.1f;
-    #endregion
-
     public bool isInteracting;
 
     [SerializeField]
@@ -31,18 +24,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         HandleInput();
-        HandleDash();
         HandleInteract();
         HandlePauseMenu();
     }
 
     void FixedUpdate()
     {
-        if (isDashing)
-        {
-            return;
-        }
-
         // Moves the character
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
@@ -100,41 +87,24 @@ public class PlayerMovement : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-
-    private void HandleDash()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)
-        {
-            StartCoroutine(Dash());
-        }
-    }
-
-    private IEnumerator Dash()
-    {
-        canDash = false;
-        isDashing = true;
-        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-        yield return new WaitForSeconds(dashingTime);
-        isDashing = false;
-    }
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Slime" && !isDashing)
+        if (other.gameObject.tag == "Slime")
         {
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);
             Time.timeScale = 0;
         }
 
-        if (other.gameObject.tag == "Fungus" && !isDashing)
+        if (other.gameObject.tag == "Fungus")
         {
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);
             Time.timeScale = 0;
         }
 
-        if (other.gameObject.tag == "Projectile" && !isDashing)
+        if (other.gameObject.tag == "Projectile")
         {
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);

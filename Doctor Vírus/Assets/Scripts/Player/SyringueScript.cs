@@ -8,7 +8,7 @@ public class SyringueScript : MonoBehaviour
     public GameObject syringuePrefab;
     private SpriteRenderer SyringueSprite;
 
-    public WeaponSwitch syringue;
+    private WeaponSwitch syringue;
     
     void Start()
     {

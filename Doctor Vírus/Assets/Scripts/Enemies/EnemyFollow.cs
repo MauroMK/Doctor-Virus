@@ -7,12 +7,11 @@ public class EnemyFollow : MonoBehaviour
 
     public float speed;
     public float startFollowDistance = 1;
-
     public bool isFollowing = false;
-
     public string weakness;
 
     private Transform player;
+    private WeaponSwitch antibiotic;
 
     [SerializeField]
     private GameObject itemDrop;
@@ -20,6 +19,7 @@ public class EnemyFollow : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        antibiotic = FindObjectOfType<WeaponSwitch>();
     }
 
     void FixedUpdate()
@@ -38,7 +38,7 @@ public class EnemyFollow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == weakness)
+        if (antibiotic.isImune == true)
         {
             Die();
         }

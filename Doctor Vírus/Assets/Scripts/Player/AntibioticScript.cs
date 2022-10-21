@@ -5,10 +5,17 @@ using UnityEngine;
 public class AntibioticScript : MonoBehaviour
 {
     public PlayerMovement player;
-    private bool isImune = false;
     private float buffTime = 2f;
+    private float buffSpeed = 1.5f;
 
-    public bool canUseAntibiotic = false;
+    private float normalPlayerSpeed = 0.8f;
+
+    private WeaponSwitch antibiotic;
+
+    void Start()
+    {
+        antibiotic = FindObjectOfType<WeaponSwitch>();
+    }
 
     void Update()
     {
@@ -17,7 +24,7 @@ public class AntibioticScript : MonoBehaviour
 
     public void HandleAntibioticUse()
     {
-        if (Input.GetButtonDown("Fire1") && canUseAntibiotic == true)
+        if (Input.GetButtonDown("Fire1") && antibiotic.canUseAntibiotic == true)
         {
             StartCoroutine(UseAntibiotic());
         }
@@ -25,25 +32,12 @@ public class AntibioticScript : MonoBehaviour
 
     private IEnumerator UseAntibiotic()
     {
-        isImune = true;
-        canUseAntibiotic = false;
-        player.moveSpeed = 1.5f;
+        antibiotic.isImune = true;
+        antibiotic.canUseAntibiotic = false;
+        player.moveSpeed = buffSpeed;
         yield return new WaitForSeconds(buffTime);
-        isImune = false;
+        antibiotic.isImune = false;
+        player.moveSpeed = normalPlayerSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Fungus" && isImune == true)
-        {
-            Destroy(other.gameObject);
-        }
-
-        if (other.gameObject.tag == "Antibiotic" && canUseAntibiotic == false)
-        {
-            canUseAntibiotic = true;
-            Destroy(other.gameObject);
-        }
-        
-    }
 }

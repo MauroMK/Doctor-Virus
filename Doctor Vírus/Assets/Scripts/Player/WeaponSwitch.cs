@@ -5,9 +5,10 @@ using UnityEngine;
 public class WeaponSwitch : MonoBehaviour
 {
     public int selectedWeapon = 0;
-
     public bool canShootSyringue;
-
+    public bool canUseAntibiotic;
+    public bool isImune;
+    
     void Start()
     {
         SelectWeapon();
@@ -69,6 +70,17 @@ public class WeaponSwitch : MonoBehaviour
         if (other.gameObject.tag == "Syringue" && canShootSyringue == false)
         {
             canShootSyringue = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "Antibiotic" && canUseAntibiotic == false)
+        {
+            canUseAntibiotic = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "Fungus" && isImune)
+        {
             Destroy(other.gameObject);
         }
     }
