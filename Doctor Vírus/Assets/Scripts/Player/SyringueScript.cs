@@ -18,6 +18,7 @@ public class SyringueScript : MonoBehaviour
     void Update()
     {
         HandleShooting();
+        HandleSyringueSpriteShowing();
     }
 
     public void HandleShooting()
@@ -34,6 +35,17 @@ public class SyringueScript : MonoBehaviour
         syringue.canShootSyringue = false;
     }
 
-    
+    void HandleSyringueSpriteShowing()
+    {
+        if (syringue.canShootSyringue == false)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        if (syringue.canShootSyringue == true)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
 
 }

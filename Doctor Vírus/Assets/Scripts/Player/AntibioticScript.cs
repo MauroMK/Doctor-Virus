@@ -6,6 +6,8 @@ public class AntibioticScript : MonoBehaviour
 {
     private WeaponSwitch antibiotic;
 
+    private SpriteRenderer antibioticSprite;
+
     void Start()
     {
         antibiotic = FindObjectOfType<WeaponSwitch>();
@@ -14,6 +16,7 @@ public class AntibioticScript : MonoBehaviour
     void Update()
     {
         HandleAntibioticUse();
+        HandleAntibioticSpriteShowing();
     }
 
     public void HandleAntibioticUse()
@@ -21,6 +24,19 @@ public class AntibioticScript : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && antibiotic.canUseAntibiotic == true)
         {
             antibiotic.HandleCoroutine();
+        }
+    }
+
+    void HandleAntibioticSpriteShowing()
+    {
+        if (antibiotic.canUseAntibiotic == false)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        if (antibiotic.canUseAntibiotic == true)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
