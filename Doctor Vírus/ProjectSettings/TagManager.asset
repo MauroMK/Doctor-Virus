@@ -12,6 +12,7 @@ TagManager:
   - Projectile
   - Bacterium
   - Antibiotic
+  - Alcohol
   layers:
   - Default
   - TransparentFX

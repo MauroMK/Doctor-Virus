@@ -103,5 +103,12 @@ public class PlayerMovement : MonoBehaviour
             Destroy(gameObject);
             Time.timeScale = 0;
         }
+
+        if (other.gameObject.tag == "Bacterium")
+        {
+            GameManager.instance.ShowGameOver();
+            Destroy(gameObject);
+            Time.timeScale = 0;
+        }
     }
 }
