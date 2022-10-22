@@ -13,9 +13,9 @@ public class WeaponSwitch : MonoBehaviour
     
     public PlayerMovement player;
     private float buffTime = 2f;
-    private float buffSpeed = 1.5f;
-    private float normalPlayerSpeed = 0.8f;
-
+    private float buffSpeed = 1f;
+    private float normalPlayerSpeed = 0.5f;
+    public SpriteRenderer spriteShield;
     #endregion
 
     void Start()
@@ -116,9 +116,11 @@ public class WeaponSwitch : MonoBehaviour
         isImune = true;
         canUseAntibiotic = false;
         player.moveSpeed = buffSpeed;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(buffTime);
         isImune = false;
         player.moveSpeed = normalPlayerSpeed;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }
