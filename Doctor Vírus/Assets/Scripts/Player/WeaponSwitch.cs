@@ -7,6 +7,7 @@ public class WeaponSwitch : MonoBehaviour
     public int selectedWeapon = 0;
     public bool canShootSyringue;
     public bool canUseAntibiotic;
+    public bool canShootAlcohol;
     public bool isImune;
     
     #region Antibiotic
@@ -19,9 +20,11 @@ public class WeaponSwitch : MonoBehaviour
 
     #region Sound
     [SerializeField]
-    private AudioClip SyringuePickupSound;
+    private AudioClip syringuePickupSound;
     [SerializeField]
-    private AudioClip AlcoholPickupSound;
+    private AudioClip alcoholPickupSound;
+    [SerializeField]
+    private AudioClip antibioticPickupSound;
     #endregion
 
     void Start()
@@ -112,12 +115,24 @@ public class WeaponSwitch : MonoBehaviour
         if (other.gameObject.tag == "Syringue" && canShootSyringue == false)
         {
             canShootSyringue = true;
+            if (syringuePickupSound)
+                AudioSource.PlayClipAtPoint(syringuePickupSound, transform.position);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.tag == "Antibiotic" && canUseAntibiotic == false)
         {
             canUseAntibiotic = true;
+            if (antibioticPickupSound)
+                AudioSource.PlayClipAtPoint(antibioticPickupSound, transform.position);
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "Alcohol" && canShootAlcohol == false)
+        {
+            canShootAlcohol = true;
+            if (alcoholPickupSound)
+                AudioSource.PlayClipAtPoint(alcoholPickupSound, transform.position);
             Destroy(other.gameObject);
         }
 

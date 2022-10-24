@@ -4,15 +4,52 @@ using UnityEngine;
 
 public class AlcoholScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform barrel;
+    public GameObject alcoholPrefab;
+    private SpriteRenderer alcoholSprite;
+
+    private WeaponSwitch alcohol;
+    
+    [SerializeField]
+    private AudioClip throwAlcoholSound;
+
     void Start()
     {
-        
+        alcohol = FindObjectOfType<WeaponSwitch>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        HandleShooting();
+        HandleAlcoholSpriteShowing();
+    }
+
+    public void HandleShooting()
+    {
+        if(Input.GetButtonDown("Fire1") && alcohol.canShootAlcohol == true)
+        {
+            if (throwAlcoholSound)
+                AudioSource.PlayClipAtPoint(throwAlcoholSound, transform.position);
+            Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
+        Instantiate(alcoholPrefab, barrel.position, barrel.rotation);
+        alcohol.canShootAlcohol = false;
+    }
+
+    void HandleAlcoholSpriteShowing()
+    {
+        if (alcohol.canShootAlcohol == false)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        if (alcohol.canShootAlcohol == true)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 }

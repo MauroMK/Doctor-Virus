@@ -5,8 +5,10 @@ using UnityEngine;
 public class AntibioticScript : MonoBehaviour
 {
     private WeaponSwitch antibiotic;
-
     private SpriteRenderer antibioticSprite;
+    [SerializeField]
+    private AudioClip antibioticUseSound;
+
 
     void Start()
     {
@@ -23,6 +25,8 @@ public class AntibioticScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && antibiotic.canUseAntibiotic == true)
         {
+            if (antibioticUseSound)
+                AudioSource.PlayClipAtPoint(antibioticUseSound, transform.position);
             antibiotic.HandleCoroutine();
         }
     }

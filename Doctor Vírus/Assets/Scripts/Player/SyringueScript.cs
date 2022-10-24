@@ -6,9 +6,12 @@ public class SyringueScript : MonoBehaviour
 {
     public Transform barrel;
     public GameObject syringuePrefab;
-    private SpriteRenderer SyringueSprite;
+    private SpriteRenderer syringueSprite;
 
     private WeaponSwitch syringue;
+    
+    [SerializeField]
+    private AudioClip throwSyringueSound;
     
     void Start()
     {
@@ -25,6 +28,8 @@ public class SyringueScript : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1") && syringue.canShootSyringue == true)
         {
+            if (throwSyringueSound)
+                AudioSource.PlayClipAtPoint(throwSyringueSound, transform.position);
             Shoot();
         }
     }
