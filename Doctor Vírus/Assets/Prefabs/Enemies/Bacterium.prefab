@@ -135,6 +135,7 @@ MonoBehaviour:
   weakness: Syringue
   isFollowing: 0
   slimeDeath: {fileID: 8300000, guid: dbe59218e49fff442a4b34247f565f15, type: 3}
+  particleEffect: {fileID: 4532090859345880270, guid: 9bf856ca6571fb7458dea36d4046f576, type: 3}
 --- !u!50 &6359590982158615230
 Rigidbody2D:
   serializedVersion: 4

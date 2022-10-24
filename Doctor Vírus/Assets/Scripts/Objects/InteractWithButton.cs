@@ -23,6 +23,9 @@ public class InteractWithButton : MonoBehaviour
     
     private bool canInteract;
 
+    [SerializeField]
+    private AudioClip doorSound;
+
     void Update()
     {
         if (canInteract)
@@ -33,11 +36,15 @@ public class InteractWithButton : MonoBehaviour
                 {
                     if (player.HaveItem(itemName))
                     {
+                        if (doorSound)
+                            AudioSource.PlayClipAtPoint(doorSound, transform.position);
                         pressedButton.Invoke();
                     }
                 }
                 else
                 {
+                    if (doorSound)
+                        AudioSource.PlayClipAtPoint(doorSound, transform.position);
                     pressedButton.Invoke();
                 }
             }

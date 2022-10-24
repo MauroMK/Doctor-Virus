@@ -24,6 +24,9 @@ public class EnemyCait : MonoBehaviour
     [SerializeField]
     private AudioClip slimeDeath;
 
+    [SerializeField]
+    private GameObject particleEffect;
+
 
     void Start()
     {
@@ -77,6 +80,7 @@ public class EnemyCait : MonoBehaviour
     {
         if (other.gameObject.tag == weakness)
         {
+            Instantiate(particleEffect, transform.position, Quaternion.identity); // Instantiates the particles
             if (slimeDeath)
                 AudioSource.PlayClipAtPoint(slimeDeath, transform.position);
             Die();

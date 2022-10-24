@@ -21,6 +21,9 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField]
     private AudioClip virusDeath;
 
+    [SerializeField]
+    private GameObject particleEffect;
+
     void Start()
     {
         waitTime = startWaitTime;
@@ -50,6 +53,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         if (other.gameObject.tag == weakness)
         {
+            Instantiate(particleEffect, transform.position, Quaternion.identity); // Instantiates the particles
             if (virusDeath)
                 AudioSource.PlayClipAtPoint(virusDeath, transform.position);
             Die();

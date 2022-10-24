@@ -18,6 +18,9 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField]
     private AudioClip slimeDeath;
 
+    [SerializeField]
+    private GameObject particleEffect;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -42,6 +45,7 @@ public class EnemyFollow : MonoBehaviour
     {
         if (antibiotic.isImune == true)
         {
+            Instantiate(particleEffect, transform.position, Quaternion.identity); // Instantiates the particles
             if (slimeDeath)
                 AudioSource.PlayClipAtPoint(slimeDeath, transform.position);
             Die();

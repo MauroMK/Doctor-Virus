@@ -158,3 +158,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   itemDrop: {fileID: 8687310193155729052, guid: c6e007331c3529b49bb981f10c2cee4e, type: 3}
+  virusDeath: {fileID: 8300000, guid: 7d06726c46179d84cbc2d5030ca57232, type: 3}
+  particleEffect: {fileID: 4532090859345880270, guid: d521b1a59d4198046b9ea709577df9ad, type: 3}
