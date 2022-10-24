@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponSwitch : MonoBehaviour
 {
-    public int selectedWeapon = 0;
+    private int selectedWeapon = 0;
     public bool canShootSyringue;
     public bool canUseAntibiotic;
     public bool canShootAlcohol;
@@ -25,6 +25,8 @@ public class WeaponSwitch : MonoBehaviour
     private AudioClip alcoholPickupSound;
     [SerializeField]
     private AudioClip antibioticPickupSound;
+    [SerializeField]
+    private AudioClip playerDeath;
     #endregion
 
     void Start()
@@ -143,6 +145,8 @@ public class WeaponSwitch : MonoBehaviour
 
         if (other.gameObject.tag == "Fungus" && !isImune)
         {
+            if (playerDeath)
+                AudioSource.PlayClipAtPoint(playerDeath, transform.position);
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);
             Time.timeScale = 0;

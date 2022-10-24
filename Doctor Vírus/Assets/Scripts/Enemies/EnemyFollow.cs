@@ -15,6 +15,9 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField]
     private GameObject itemDrop;
 
+    [SerializeField]
+    private AudioClip slimeDeath;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -39,6 +42,8 @@ public class EnemyFollow : MonoBehaviour
     {
         if (antibiotic.isImune == true)
         {
+            if (slimeDeath)
+                AudioSource.PlayClipAtPoint(slimeDeath, transform.position);
             Die();
         }
     }

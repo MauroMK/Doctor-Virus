@@ -134,6 +134,7 @@ MonoBehaviour:
   projectile: {fileID: 6173797981122512795, guid: 6778a5b91ca1d7e4187b75f0614ba0ea, type: 3}
   weakness: Syringue
   isFollowing: 0
+  slimeDeath: {fileID: 8300000, guid: dbe59218e49fff442a4b34247f565f15, type: 3}
 --- !u!50 &6359590982158615230
 Rigidbody2D:
   serializedVersion: 4

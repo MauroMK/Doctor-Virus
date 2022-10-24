@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
 {
     public float bulletSpeed;
 
+    [SerializeField]
+    private AudioClip itemBreak;
+
     void Update()
     {
         transform.Translate(Vector2.right * bulletSpeed * Time.deltaTime);
@@ -13,18 +16,25 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Slime" || other.gameObject.layer == 6)
+        if (other.gameObject.tag == "Virus")
         {
             Destroy(gameObject);
         }
 
-        if (other.gameObject.tag == "Fungus" || other.gameObject.layer == 6)
+        if (other.gameObject.tag == "Fungus")
         {
             Destroy(gameObject);
         }
 
-        if (other.gameObject.tag == "Bacterium" || other.gameObject.layer == 6)
+        if (other.gameObject.tag == "Bacterium")
         {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.layer == 6)
+        {
+            if (itemBreak)
+                AudioSource.PlayClipAtPoint(itemBreak, transform.position);
             Destroy(gameObject);
         }
     }

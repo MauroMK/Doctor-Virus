@@ -21,6 +21,10 @@ public class EnemyCait : MonoBehaviour
 
     public bool isFollowing = false;
 
+    [SerializeField]
+    private AudioClip slimeDeath;
+
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -73,6 +77,8 @@ public class EnemyCait : MonoBehaviour
     {
         if (other.gameObject.tag == weakness)
         {
+            if (slimeDeath)
+                AudioSource.PlayClipAtPoint(slimeDeath, transform.position);
             Die();
         }
     }

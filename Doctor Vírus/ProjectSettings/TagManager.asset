@@ -8,11 +8,11 @@ TagManager:
   - Syringue
   - Portal
   - Fungus
-  - Slime
   - Projectile
   - Bacterium
   - Antibiotic
   - Alcohol
+  - Virus
   layers:
   - Default
   - TransparentFX

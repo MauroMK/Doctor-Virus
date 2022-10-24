@@ -18,6 +18,9 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField]
     private GameObject itemDrop;
 
+    [SerializeField]
+    private AudioClip virusDeath;
+
     void Start()
     {
         waitTime = startWaitTime;
@@ -47,6 +50,8 @@ public class EnemyPatrol : MonoBehaviour
     {
         if (other.gameObject.tag == weakness)
         {
+            if (virusDeath)
+                AudioSource.PlayClipAtPoint(virusDeath, transform.position);
             Die();
         }
     }

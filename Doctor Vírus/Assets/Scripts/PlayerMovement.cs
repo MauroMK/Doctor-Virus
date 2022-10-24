@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private List<string> inventoryItems = new List<string>();
 
+    [SerializeField]
+    private AudioClip playerDeath;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -88,10 +91,17 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
     
+    private void PlayDeathSound()
+    {
+        if (playerDeath)
+                AudioSource.PlayClipAtPoint(playerDeath, transform.position);
+    }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Slime")
+        if (other.gameObject.tag == "Virus")
         {
+            PlayDeathSound();
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);
             Time.timeScale = 0;
@@ -99,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Projectile")
         {
+            PlayDeathSound();
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);
             Time.timeScale = 0;
@@ -106,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Bacterium")
         {
+            PlayDeathSound();
             GameManager.instance.ShowGameOver();
             Destroy(gameObject);
             Time.timeScale = 0;

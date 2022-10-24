@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 2
+  itemBreak: {fileID: 8300000, guid: d3f0eb960506cbb479fbdcebbe202f53, type: 3}
 --- !u!58 &-1447589040610470646
 CircleCollider2D:
   m_ObjectHideFlags: 0

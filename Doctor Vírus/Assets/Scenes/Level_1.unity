@@ -83566,7 +83566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f139df5f88b6fa544af58b1f0d96f943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: 0
   canShootSyringue: 0
   canUseAntibiotic: 0
   canShootAlcohol: 0
@@ -83576,6 +83575,7 @@ MonoBehaviour:
   syringuePickupSound: {fileID: 8300000, guid: d5b2b2f13a6a4cf49bff642adba6ab02, type: 3}
   alcoholPickupSound: {fileID: 8300000, guid: 2c5007e74a7d12b45b8c0bf1fec8af76, type: 3}
   antibioticPickupSound: {fileID: 8300000, guid: c89bde6b5920f5e4994db83b7c147379, type: 3}
+  playerDeath: {fileID: 8300000, guid: e2cf8ef4bde66844baa201f4ec688a2a, type: 3}
 --- !u!61 &1298671915
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84153,6 +84153,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   isInteracting: 0
   inventoryItems: []
+  playerDeath: {fileID: 8300000, guid: e2cf8ef4bde66844baa201f4ec688a2a, type: 3}
 --- !u!50 &1364937023
 Rigidbody2D:
   serializedVersion: 4
@@ -84657,6 +84658,10 @@ PrefabInstance:
     - target: {fileID: 6359590982158615216, guid: 2bee3ef4320770f42b1e850ec890611e, type: 3}
       propertyPath: m_Name
       value: Bacterium3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359590982158615218, guid: 2bee3ef4320770f42b1e850ec890611e, type: 3}
+      propertyPath: weakness
+      value: Alcohol
       objectReference: {fileID: 0}
     - target: {fileID: 6359590982158615218, guid: 2bee3ef4320770f42b1e850ec890611e, type: 3}
       propertyPath: startFollowDistance
@@ -85182,7 +85187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 0.78039217}
+  m_Color: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -85831,7 +85836,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4094780969147509297, guid: 312ce7881c77ae147960132c071d4b38, type: 3}
       propertyPath: m_Name
-      value: Slime
+      value: Virus
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094780969147509297, guid: 312ce7881c77ae147960132c071d4b38, type: 3}
+      propertyPath: m_TagString
+      value: Virus
       objectReference: {fileID: 0}
     - target: {fileID: 4094780969147509307, guid: 312ce7881c77ae147960132c071d4b38, type: 3}
       propertyPath: moveSpots.Array.data[0]
