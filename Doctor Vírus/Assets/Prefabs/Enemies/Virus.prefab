@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4094780969147509306}
   - component: {fileID: 4094780969147509307}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: Virus
   m_TagString: Slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4094780969147509297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.8079998, y: 0.31600004, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 316138846, guid: 9eb97f9ce47d27342b80326d75dfcc51, type: 3}
+  m_Sprite: {fileID: 1903240568, guid: 1a060578f8cf00b499e3453d1dfc19a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.015097074}
+  m_Offset: {x: 0.013260126, y: 0.11750436}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1.43, y: 2.95}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15396118, y: 0.12980585}
+  m_Size: {x: 1.1882472, y: 2.622705}
   m_EdgeRadius: 0
 --- !u!50 &4094780969147509306
 Rigidbody2D:
