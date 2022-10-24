@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
     #endregion
 
+    private Animator anim;
+
     public bool isInteracting;
 
     [SerializeField]
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -35,6 +38,21 @@ public class PlayerMovement : MonoBehaviour
     {
         // Moves the character
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        
+        if (movement.x > 0f || movement.y > 0f)
+        {
+            anim.SetBool("running", true);
+        }
+
+        if (movement.x < 0f || movement.y < 0f)
+        {
+            anim.SetBool("running", true);
+        }
+
+        if (movement.x == 0f && movement.y == 0f)
+        {
+            anim.SetBool("running", false);
+        }
     }
 
     public void AddItem(string itemName)
