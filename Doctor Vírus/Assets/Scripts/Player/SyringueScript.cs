@@ -26,7 +26,7 @@ public class SyringueScript : MonoBehaviour
 
     public void HandleShooting()
     {
-        if(Input.GetButtonDown("Fire1") && syringue.canShootSyringue == true)
+        if(Input.GetButtonDown("Fire1") && syringue.canShootSyringue == true && Time.timeScale == 1)
         {
             if (throwSyringueSound)
                 AudioSource.PlayClipAtPoint(throwSyringueSound, transform.position);

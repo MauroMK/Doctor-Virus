@@ -33,8 +33,17 @@ public class GameManager : MonoBehaviour
 
     public void ShowPauseMenu()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
+
     }
 
     public void ResumeLevel()
