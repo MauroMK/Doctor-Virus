@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-
     public GameObject prototypeScreen;
 
     public void OnTriggerEnter2D(Collider2D other)

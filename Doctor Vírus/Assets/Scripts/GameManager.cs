@@ -9,10 +9,23 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOver;
     public GameObject pauseMenu;
+    public GameObject inventory;
 
     void Awake()
     {
         instance = this;
+    }
+
+    void Update()
+    {
+        if (Time.timeScale == 0)
+        {
+            inventory.SetActive(false);
+        }
+        else
+        {
+            inventory.SetActive(true);
+        }
     }
 
     public void ShowGameOver()
@@ -34,6 +47,7 @@ public class GameManager : MonoBehaviour
     public void ShowPauseMenu()
     {
         pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
+        
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
@@ -42,8 +56,6 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-
-
     }
 
     public void ResumeLevel()
