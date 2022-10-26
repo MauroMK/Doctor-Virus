@@ -21,8 +21,6 @@ public class ShowItemInventory : MonoBehaviour
 
     #endregion
 
-    
-
     private WeaponSwitch weapons;
 
     void Start()

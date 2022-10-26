@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOver;
     public GameObject pauseMenu;
     public GameObject inventory;
+    public GameObject paperList;
 
     void Awake()
     {
@@ -68,6 +69,16 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit Game");
+    }
+
+    public void ShowPaperList()
+    {
+        paperList.SetActive(true);
+    }
+
+    public void ClosePaperList()
+    {
+        paperList.SetActive(false);
     }
 
 }
