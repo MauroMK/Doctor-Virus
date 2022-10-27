@@ -125,6 +125,8 @@ MonoBehaviour:
   isFollowing: 0
   itemDrop: {fileID: 6761864455136123763, guid: 18400f6771ccb0b43858a5e8aa7c4757, type: 3}
   slimeDeath: {fileID: 8300000, guid: dbe59218e49fff442a4b34247f565f15, type: 3}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: eca977741dcefc84dbcdfb1c445d496c, type: 3}
   particleEffect: {fileID: 4532090859345880270, guid: a07cf50da50a8ad4f97cd15401f1b348, type: 3}
 --- !u!58 &9184916183467297921
 CircleCollider2D:

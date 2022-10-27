@@ -81,8 +81,7 @@ public class EnemyCait : MonoBehaviour
         if (other.gameObject.tag == weakness)
         {
             Instantiate(particleEffect, transform.position, Quaternion.identity); // Instantiates the particles
-            if (slimeDeath)
-                AudioSource.PlayClipAtPoint(slimeDeath, transform.position);
+            PlaySlimeAudio(slimeDeath);
             Die();
         }
     }
@@ -97,5 +96,11 @@ public class EnemyCait : MonoBehaviour
     {
         Vector2 position = transform.position;
         GameObject item = Instantiate(itemDrop, position, transform.rotation);
+    }
+
+    void PlaySlimeAudio(AudioClip sound)
+    {
+        if (sound)
+            AudioSource.PlayClipAtPoint(sound, transform.position);
     }
 }

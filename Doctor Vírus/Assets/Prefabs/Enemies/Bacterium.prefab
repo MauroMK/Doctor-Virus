@@ -127,10 +127,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDrop: {fileID: 6761864455136123763, guid: 18400f6771ccb0b43858a5e8aa7c4757, type: 3}
   startFollowDistance: 1
-  speed: 0.6
+  speed: 0.8
   stoppingDistance: 0.8
   retreatDistance: 0.4
-  startTimeBtwShots: 2
+  startTimeBtwShots: 1
   projectile: {fileID: 6173797981122512795, guid: 6778a5b91ca1d7e4187b75f0614ba0ea, type: 3}
   weakness: Syringue
   isFollowing: 0

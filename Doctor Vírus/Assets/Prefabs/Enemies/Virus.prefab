@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.4
   startWaitTime: 2
-  weakness: Syringue
+  weakness: Alcohol
   moveSpots:
   - {fileID: 0}
   - {fileID: 0}
