@@ -23,7 +23,7 @@ public class AntibioticScript : MonoBehaviour
 
     public void HandleAntibioticUse()
     {
-        if (Input.GetButtonDown("Fire1") && antibiotic.canUseAntibiotic == true && Time.timeScale == 1)
+        if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space) && antibiotic.canUseAntibiotic == true && Time.timeScale == 1)
         {
             if (antibioticUseSound)
                 AudioSource.PlayClipAtPoint(antibioticUseSound, transform.position);

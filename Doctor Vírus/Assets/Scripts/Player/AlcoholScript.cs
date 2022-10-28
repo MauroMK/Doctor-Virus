@@ -26,7 +26,7 @@ public class AlcoholScript : MonoBehaviour
 
     public void HandleShooting()
     {
-        if(Input.GetButtonDown("Fire1") && alcohol.canShootAlcohol == true && Time.timeScale == 1)
+        if(Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space) && alcohol.canShootAlcohol == true && Time.timeScale == 1)
         {
             if (throwAlcoholSound)
                 AudioSource.PlayClipAtPoint(throwAlcoholSound, transform.position);
