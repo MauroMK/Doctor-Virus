@@ -22,6 +22,7 @@ public class InteractWithButton : MonoBehaviour
     private UnityEvent pressedButton;
     
     private bool canInteract;
+    private bool canUseAgain = true;
 
     [SerializeField]
     private AudioClip doorSound;
@@ -30,22 +31,22 @@ public class InteractWithButton : MonoBehaviour
     {
         if (canInteract)
         {
-            if (canInteract && player.isInteracting == true)
+            if (canInteract && player.isInteracting == true && canUseAgain == true)
             {
                 if (needCheckInventory)
                 {
                     if (player.HaveItem(itemName))
                     {
-                        if (doorSound)
-                            AudioSource.PlayClipAtPoint(doorSound, transform.position);
+                        PlayDoorSound();
                         pressedButton.Invoke();
+                        canUseAgain = false;
                     }
                 }
                 else
                 {
-                    if (doorSound)
-                        AudioSource.PlayClipAtPoint(doorSound, transform.position);
+                    PlayDoorSound();
                     pressedButton.Invoke();
+                    canUseAgain = false;
                 }
             }
         }
@@ -54,7 +55,7 @@ public class InteractWithButton : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         canInteract = true;
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && canUseAgain == true)
         {
             hintText.SetActive(true);
         }
@@ -65,5 +66,11 @@ public class InteractWithButton : MonoBehaviour
     {
         canInteract = false;
         hintText.SetActive(false);
+    }
+
+    private void PlayDoorSound()
+    {
+        if (doorSound)
+            AudioSource.PlayClipAtPoint(doorSound, transform.position);
     }
 }
