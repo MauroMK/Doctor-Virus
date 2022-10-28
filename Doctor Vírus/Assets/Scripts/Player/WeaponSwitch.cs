@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponSwitch : MonoBehaviour
 {
-    private int selectedWeapon = 0;
+    public int selectedWeapon = 0;
     public bool canShootSyringue;
     public bool canUseAntibiotic;
     public bool canShootAlcohol;

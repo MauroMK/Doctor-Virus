@@ -18,6 +18,12 @@ public class ShowItemInventory : MonoBehaviour
     private GameObject alcoholFull;
     [SerializeField]
     private GameObject alcoholEmpty;
+    [SerializeField]
+    private GameObject green1;
+    [SerializeField]
+    private GameObject green2;
+    [SerializeField]
+    private GameObject green3;
 
     #endregion
 
@@ -69,6 +75,25 @@ public class ShowItemInventory : MonoBehaviour
 
         // Show item selected in inventory
 
+        if (weapons.selectedWeapon == 0)
+        {
+            green1.SetActive(true);
+            green2.SetActive(false);
+            green3.SetActive(false);
+        }
 
+        if (weapons.selectedWeapon == 1)
+        {
+            green1.SetActive(false);
+            green2.SetActive(true);
+            green3.SetActive(false);
+        }
+
+        if (weapons.selectedWeapon == 2)
+        {
+            green1.SetActive(false);
+            green2.SetActive(false);
+            green3.SetActive(true);
+        }
     }
 }
