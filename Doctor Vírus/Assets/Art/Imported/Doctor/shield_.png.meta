@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e66a02309498fb8469904aa38cd60f3b
+guid: d97f843fbbc4423499ecc99e2e9d4274
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,22 +117,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door_0
+      name: shield__0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 8
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5033467, y: 0.98694783}
+        x: 276
+        y: 67
+        width: 285
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7deb71fa80b48c544843877feec2e8ea
-      internalID: 642951497
+      spriteID: 97ac84fdb7726c04197e060208d7e3b4
+      internalID: 1234144235
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      door_0: 642951497
+      shield__0: 1234144235
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
