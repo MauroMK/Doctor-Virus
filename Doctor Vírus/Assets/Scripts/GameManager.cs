@@ -81,4 +81,9 @@ public class GameManager : MonoBehaviour
         paperList.SetActive(false);
     }
 
+    public void LoadFinalScene()
+    {
+        SceneManager.LoadScene("FinalScene");
+    }
+
 }
