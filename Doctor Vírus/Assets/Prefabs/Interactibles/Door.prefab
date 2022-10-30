@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5435991726623536729}
   - component: {fileID: 5435991726623536730}
-  - component: {fileID: 5435991726623536731}
-  - component: {fileID: 5435991726623536728}
   - component: {fileID: 5435991726623536727}
   m_Layer: 6
   m_Name: Door
@@ -87,38 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5435991726623536731
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5435991726623536732}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 95f883653393a1f4ea7144bdc315574c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5435991726623536728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5435991726623536732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b2d2d3d9c026e479dc7a3c4617b0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &5435991726623536727
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject inventory;
     public GameObject paperList;
+    public GameObject tutorialImage;
 
     void Awake()
     {
@@ -79,6 +80,16 @@ public class GameManager : MonoBehaviour
     public void ClosePaperList()
     {
         paperList.SetActive(false);
+    }
+
+    public void ShowTutorialImage()
+    {
+        tutorialImage.SetActive(true);
+    }
+
+    public void CloseTutorialImage()
+    {
+        tutorialImage.SetActive(false);
     }
 
     public void LoadFinalScene()
