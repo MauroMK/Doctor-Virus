@@ -6,7 +6,7 @@ public class InteractWithPaperTutorial : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && Time.timeScale == 1)
         {
             GameManager.instance.ShowTutorialImage();
         }
