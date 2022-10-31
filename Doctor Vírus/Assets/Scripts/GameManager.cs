@@ -49,7 +49,10 @@ public class GameManager : MonoBehaviour
     public void ShowPauseMenu()
     {
         pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
-        
+
+        paperList.gameObject.SetActive(false);
+        tutorialImage.gameObject.SetActive(false);
+
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
