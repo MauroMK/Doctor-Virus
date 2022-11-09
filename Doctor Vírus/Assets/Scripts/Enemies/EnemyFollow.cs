@@ -41,7 +41,6 @@ public class EnemyFollow : MonoBehaviour
         if (isFollowing == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            PlaySlimeAudio(heartBeat);
         }   
     }
 
