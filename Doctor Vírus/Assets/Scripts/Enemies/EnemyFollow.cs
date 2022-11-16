@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-
-    public float speed;
-    public float startFollowDistance = 1;
+    [SerializeField]
+    private float speed;
+    
+    private float startFollowDistance = 1;
     public bool isFollowing = false;
 
     private Transform player;

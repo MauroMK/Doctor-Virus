@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class InteractWithButton : MonoBehaviour
 {
-
+    #region Variables
     [SerializeField]
     private GameObject hintText;
 
@@ -26,6 +26,7 @@ public class InteractWithButton : MonoBehaviour
 
     [SerializeField]
     private AudioClip doorSound;
+    #endregion
 
     void Update()
     {

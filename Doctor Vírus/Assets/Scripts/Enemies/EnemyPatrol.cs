@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    #region Variables
     [SerializeField]
     private float speed;
     private float waitTime;
@@ -23,6 +24,8 @@ public class EnemyPatrol : MonoBehaviour
 
     [SerializeField]
     private GameObject particleEffect;
+
+    #endregion
 
     void Start()
     {

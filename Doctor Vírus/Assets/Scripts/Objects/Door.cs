@@ -6,7 +6,6 @@ public class Door : MonoBehaviour
 {
     private Animator animator;
 
-
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -16,5 +15,4 @@ public class Door : MonoBehaviour
     {
         animator.SetBool("Open Door", true);
     }
-
 }

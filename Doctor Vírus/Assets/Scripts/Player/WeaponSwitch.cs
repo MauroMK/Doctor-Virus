@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class WeaponSwitch : MonoBehaviour
 {
+    #region Variables
     public int selectedWeapon = 0;
     public bool canShootSyringue;
     public bool canUseAntibiotic;
     public bool canShootAlcohol;
     public bool isImune;
-    
+    #endregion
+
     #region Antibiotic
     public PlayerMovement player;
     private float buffTime = 2f;

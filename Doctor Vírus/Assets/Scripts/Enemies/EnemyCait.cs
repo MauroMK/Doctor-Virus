@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class EnemyCait : MonoBehaviour
 {
+    #region Variables
     [SerializeField]
     private GameObject itemDrop;
 
-    public float startFollowDistance;
-    public float speed;
-    public float stoppingDistance;
-    public float retreatDistance;
-    public float startTimeBtwShots;
+    [SerializeField] private float startFollowDistance;
+    [SerializeField] private float speed;
+    [SerializeField] private float stoppingDistance;
+    [SerializeField] private float retreatDistance;
+    [SerializeField] private float startTimeBtwShots;
+    
     public GameObject projectile;
 
     public string weakness;
@@ -26,7 +28,7 @@ public class EnemyCait : MonoBehaviour
 
     [SerializeField]
     private GameObject particleEffect;
-
+    #endregion
 
     void Start()
     {

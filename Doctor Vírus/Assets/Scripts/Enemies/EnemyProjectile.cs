@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    public float speed;
+    [SerializeField]
+    private float speed;
 
     private Transform player;
     private Vector2 target;

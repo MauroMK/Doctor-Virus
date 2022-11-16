@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    #region Variables
     public static GameManager instance;
 
+    [Header("References")]
     public GameObject gameOver;
     public GameObject pauseMenu;
     public GameObject inventory;
     public GameObject paperList;
     public GameObject tutorialImage;
+    #endregion
 
     void Awake()
     {
