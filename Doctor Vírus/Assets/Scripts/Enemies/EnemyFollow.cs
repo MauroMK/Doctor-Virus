@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField]
     private float speed;
     
@@ -25,6 +27,8 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField]
     private GameObject particleEffect;
 
+    #endregion
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -39,7 +43,7 @@ public class EnemyFollow : MonoBehaviour
             isFollowing = true;
         }
         // If is following true, move the enemy to the player
-        if (isFollowing == true)
+        if (isFollowing)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }   
@@ -67,7 +71,7 @@ public class EnemyFollow : MonoBehaviour
         GameObject item = Instantiate(itemDrop, position, transform.rotation);
     }
 
-    void PlaySlimeAudio(AudioClip sound)
+    private void PlaySlimeAudio(AudioClip sound)
     {
         if (sound)
             AudioSource.PlayClipAtPoint(sound, transform.position);

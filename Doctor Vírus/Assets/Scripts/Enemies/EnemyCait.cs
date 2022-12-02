@@ -44,7 +44,7 @@ public class EnemyCait : MonoBehaviour
                 isFollowing = true;
             }
             
-            if (isFollowing == true)
+            if (isFollowing)
             {
                 // If the distance between the enemy and the player is greater than the amount set, he will run towards the player
                 if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
@@ -63,7 +63,7 @@ public class EnemyCait : MonoBehaviour
 
         // Shooting time
             
-            if (isFollowing == true)
+            if (isFollowing)
             {
                 if (timeBtwShots <= 0)
                 {
@@ -100,7 +100,7 @@ public class EnemyCait : MonoBehaviour
         GameObject item = Instantiate(itemDrop, position, transform.rotation);
     }
 
-    void PlaySlimeAudio(AudioClip sound)
+    private void PlaySlimeAudio(AudioClip sound)
     {
         if (sound)
             AudioSource.PlayClipAtPoint(sound, transform.position);
